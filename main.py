@@ -1,9 +1,11 @@
 import requests
 import json
 from bs4 import BeautifulSoup
+import local_settings
+
 
 url = "https://qiita.com/"
-webhook_url = "https://hooks.slack.com/services/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"
+wh_url = local_settings.webhook_url
 
 html = requests.get(url)
 soup = BeautifulSoup(html.content, "html.parser")
@@ -27,6 +29,6 @@ for i in range(5):
     text += items3[i].find(class_="css-70qvj9").find(class_="css-1laxd2k").get_text()
     text += "\n\n"
 
-requests.post(webhook_url, data=json.dumps({
+requests.post(wh_url, data=json.dumps({
     "text": text
 }))
