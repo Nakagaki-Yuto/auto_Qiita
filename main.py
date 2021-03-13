@@ -1,7 +1,7 @@
-import requests
-import json
-from bs4 import BeautifulSoup
 import local_settings
+import requests
+from bs4 import BeautifulSoup
+import json
 
 
 url = "https://qiita.com/"
