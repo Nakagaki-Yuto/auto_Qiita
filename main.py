@@ -1,5 +1,5 @@
-import requests
 import json
+import requests
 from bs4 import BeautifulSoup
 import local_settings
 
